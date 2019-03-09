@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web:
+    image: bijeshos/spring-boot-with-docker-demo:0.1
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure      
+    ports:
+      - "4000:9090"
+    networks:
+      - webnet
+networks:
+  webnet:
