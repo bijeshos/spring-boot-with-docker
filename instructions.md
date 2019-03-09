@@ -1,30 +1,6 @@
-# Spring Boot with Docker (Demo)
+# Instructions
 
-This is a simple Spring Boot application which is used to demonstarte intergration with Docker. This also includes a few configurations to demonstrate deployment on Docker Swarm. 
-
-## Overview
-
-Following are a few aspects being demonstrated:
-
-- Building Docker image using Dockerfile
-- Building Docker image using Maven
-- Basic deployment using Docker and invocation of health-check Rest API endpoint 
-- Deployment using Docker Compose with 3 replicas
-- Deployment using Docker Compose with 3 replicas and visualizer
-
-## Prerequisites
-- JDK 8
-- Docker
-
-## Dev Environment
-This application was tested on the following platforms:
-
-- OS : Ubuntu 18.04 LTS
-- Docker: 18.09.3 (community)
-
-## Instructions
-
-### Get the project to local machine
+## Get the project to local machine
 - Clone the repo to ~/demo directory
     - mkdir ~/demo
     - cd ~/demo
@@ -34,12 +10,12 @@ This application was tested on the following platforms:
 	 - $ cd ~/demo/spring-boot-with-docker-demo
 
 
-### Build the project
+## Build the project
 - Perform Maven Build/Package
     - $ mvn package -f pom.xml
 
-### Docker (Basic)
-#### Cleanup Docker
+## Docker (Basic)
+### Cleanup Docker
 - Check locally available docker images
 	 - $ docker images
 
@@ -52,7 +28,7 @@ This application was tested on the following platforms:
 - Remove any unwanted docker images (by specifying respective image id)
 	 - $ docker rmi \<image-id>
 
-#### Deploy on Docker
+### Deploy on Docker
 - Build a docker image
 	 - $ docker build --tag bijeshos/spring-boot-with-docker-demo:0.1 .
 
@@ -63,7 +39,7 @@ This application was tested on the following platforms:
 	 - $ curl http://localhost:9090/spring-boot-with-docker-demo/v0.1/health-check
 	 - $ curl http://127.0.0.1:9090/spring-boot-with-docker-demo/v0.1/health-check
 
-#### Cleanup Docker
+### Cleanup Docker
 - Remove container
 	 - $ docker rm \<container-id>
 
@@ -71,9 +47,9 @@ This application was tested on the following platforms:
 	 - $ docker rmi \<image-id>
 
 
-### Docker Swarm (Basic)
+## Docker Swarm (Basic)
 
-#### Deploy on Docker Swarm Cluster
+### Deploy on Docker Swarm Cluster
 - Initialize Docker Swam cluster
 	 - $ docker swarm init
 
@@ -92,31 +68,20 @@ This application was tested on the following platforms:
 	 - $ curl http://localhost:4000/spring-boot-with-docker-demo/v0.1/health-check
 	 - $ curl http://127.0.0.1:4000/spring-boot-with-docker-demo/v0.1/health-check
 
-### Docker Swarm (with Visualizer)
+## Docker Swarm (with Visualizer)
 - Deploy using Docker compose file
 	 - $ docker stack deploy -c docker-compose-02-with-visualizer spring-boot-with-docker-demo-stk
 
 - Check the visualize at:
 	 - http://127.0.0.1:5000/
 
-#### Cleanup Docker Swarm Cluster
+### Cleanup Docker Swarm Cluster
 - Remove docker stack
 	 - $ docker stack rm spring-boot-with-docker-demo-stk
 
 - Shutdown Docker Swarm Cluster
 	 - $ docker swarm leave --force
 
-### Assumptions
+## Assumptions
 - Docker commands can be executed directly as current user
 	 - If this is not correctly setup, prefix ***sudo*** with above mentioned docker commands (On Debian machines)
-
-## Reference
-
-- https://spring.io/guides/gs/spring-boot-docker/
-- https://docs.docker.com/get-started/part5/
-
-
-## Future scope
-- Integration with Kubernetes
-
-
