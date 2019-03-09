@@ -16,6 +16,9 @@ Following are a few aspects being demonstrated:
 - JDK 8
 - Docker
 
+## Instructions
+
+Refer _instructions.md_ file for detailed instructions
 
 ## Dev Environment
 This application was tested on the following platforms:
