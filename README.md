@@ -1,6 +1,6 @@
 # Spring Boot with Docker (Demo)
 
-This is a simple Spring Boot application which is used to demonstarte intergration with Docker. This also includes a few configurations to demonstrate deployment on Docker Swarm. 
+This is a simple Spring Boot application used for demonstarting intergration with Docker. This also includes a few configurations to show deployment on Docker Swarm. 
 
 ## Overview
 
@@ -17,7 +17,7 @@ Following are a few aspects being demonstrated:
 - Docker
 
 ## Dev Environment
-This application was tested on the following platforms:
+This application was tested on the following:
 
 - OS : Ubuntu 18.04 LTS
 - Docker: 18.09.3 (community)
